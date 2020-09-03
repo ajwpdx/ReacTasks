@@ -1,9 +1,12 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {useForm} from '../hooks/useForm'
 
 const TaskForm = (props) => {
+
     const [values, handleChange] = useForm({task: ''})
     
+
+
     return (
         <section className='task-form'>
             <h1>Make a new task</h1>
@@ -14,7 +17,7 @@ const TaskForm = (props) => {
                     value={values.task}
                     onChange={handleChange} 
                     />
-                    <button>+</button>
+                    <button onClick={props.addNewTask}>+</button>
                 </label>
             </form>
         </section>
