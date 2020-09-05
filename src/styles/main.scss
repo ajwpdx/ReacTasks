@@ -74,6 +74,9 @@
       font-size: .8rem;
       cursor: default;
       color: $react-dark-gray;
+      &:hover{
+        background: white;
+      }
     }
 
   }
