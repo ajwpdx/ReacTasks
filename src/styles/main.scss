@@ -1,0 +1,115 @@
+.task-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: $container-background;
+
+  .react-header {
+    display: flex;
+    justify-content: space-around;
+    background: $header-background;
+    padding: 2.5rem;
+
+    .header-logo {
+      width: 60px;
+      display: inline-block;
+      padding: 0.5rem;
+    }
+  }
+
+  .app-title {
+    margin: 0 auto;
+    padding: 2.5rem;
+
+    h1 {
+      display: inline-block;
+    }
+    .react-logo {
+      width: 60px;
+      animation: App-logo-spin infinite 20s linear;
+      display: inline-block;
+      padding: 0.5rem;
+    }
+  }
+  .task-form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 auto 2rem;
+
+    h2 {
+      padding: 1rem 0;
+    }
+
+    input {
+      width: 150px;
+      transition: width 1s;
+
+      &:focus {
+        width: 270px;
+      }
+    }
+    button {
+      margin-left: 1rem;
+    }
+  }
+
+  .completed-count {
+    margin: 0 auto 1rem;
+    width: 80%;
+
+    p {
+      color: $react-blue;
+      font-size: .8rem;
+      display: inline-block;
+      padding:.5rem 0;
+    }
+    .clear-completed{
+      margin-left: 1rem;
+      padding: .5rem;
+      background: $react-blue;
+      font-size: .8rem;
+      cursor: default;
+      color: $react-dark-gray;
+    }
+
+  }
+
+  .task-list {
+    width: 80%;
+    margin: 0 auto;
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      li {
+        cursor: default;
+      }
+    }
+  }
+
+  .task-item {
+    background: $react-light-blue;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    display: inline-block;
+
+    &:hover {
+      background: $react-blue;
+    }
+  }
+
+  .completed {
+    background: $react-off-white;
+    text-decoration: line-through;
+    color: $react-dark-gray;
+
+    &:hover {
+      background: $react-off-white;
+    }
+  }
+}

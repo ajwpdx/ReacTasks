@@ -4,8 +4,11 @@ import Task from './Task'
 const TaskList = (props) => {
     return (
         <section className='task-list'>
-            {props.tasks.map((t) => {
-            return (<Task task = {t} key = {t.id}/>)})}
+            <ul>
+            {props.tasks.map( (t) => {
+                return <Task key = {t.id} task = {t} toggleCompleted={props.toggleCompleted}/>
+            })}
+            </ul>
         </section>
     )
 }

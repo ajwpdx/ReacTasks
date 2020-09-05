@@ -1,23 +1,34 @@
-import React from 'react'
-import {useForm} from '../hooks/useForm'
+import React, { useState } from 'react'
+import {getUniqueId} from '../hooks/getUniqueId'
 
 const TaskForm = (props) => {
 
-    const [values, handleChange] = useForm({task: ''})
-    
+    const [taskInput, setTaskInput] = useState('')
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const newTask = {
+            task: taskInput,
+            id: getUniqueId(),
+            completed: false
+        }
+        
+        props.addNewTask(newTask)
+        setTaskInput('')
+    }
 
     return (
         <section className='task-form'>
-            <h1>Make a new task</h1>
-            <form>
+            <form onSubmit={handleSubmit} autoComplete='off'>
                 <label>
                     <input
                     name='task'
-                    value={values.task}
-                    onChange={handleChange} 
+                    value={taskInput}
+                    onChange={(e) => setTaskInput(e.target.value)} 
+                    placeholder='Add a task'
+                    required
                     />
-                    <button onClick={props.addNewTask}>+</button>
+                    <button>Add</button>
                 </label>
             </form>
         </section>
