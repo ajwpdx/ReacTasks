@@ -1,3 +1,21 @@
+.react-header {
+  background: $header-background;
+  padding: 2.5rem;
+
+  .logo-container{
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  .header-logo {
+    width: 60px;
+    display: inline-block;
+    padding: 0.5rem;
+  }
+}
+
 .task-container {
   display: flex;
   flex-direction: column;
@@ -5,19 +23,6 @@
   min-height: 100vh;
   margin: 0 auto;
   background: $container-background;
-
-  .react-header {
-    display: flex;
-    justify-content: space-around;
-    background: $header-background;
-    padding: 2.5rem;
-
-    .header-logo {
-      width: 60px;
-      display: inline-block;
-      padding: 0.5rem;
-    }
-  }
 
   .app-title {
     margin: 0 auto;
@@ -34,11 +39,15 @@
     }
   }
   .task-form {
-    width: 80%;
+    width: 40%;
     display: flex;
     flex-direction: column;
+    margin: 0 auto 1rem;
 
-    margin: 0 auto 2rem;
+    form{
+      display: flex;
+      justify-content: flex-start;
+    }
 
     h2 {
       padding: 1rem 0;
@@ -59,7 +68,7 @@
 
   .completed-count {
     margin: 0 auto 1rem;
-    width: 80%;
+    width: 40%;
 
     p {
       color: $react-blue;
@@ -82,7 +91,7 @@
   }
 
   .task-list {
-    width: 80%;
+    width: 40%;
     margin: 0 auto;
     ul {
       display: flex;

@@ -28,8 +28,8 @@ const TaskForm = (props) => {
                     placeholder='Add a task'
                     required
                     />
-                    <button>Add</button>
                 </label>
+                <button>Add</button>
             </form>
         </section>
     )

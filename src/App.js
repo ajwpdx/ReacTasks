@@ -33,8 +33,8 @@ function App() {
 
   return (
     <div className='app'>
+             <Header/>
       <div className='task-container'>
-        <Header/>
         <Title/>
       <TaskForm  addNewTask={addNewTask}/>
       <CompletedCount tasks={tasks} setTasks={setTasks}/>
