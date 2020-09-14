@@ -7,13 +7,13 @@ const TaskForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const newTask = {
-            task: taskInput,
-            id: getUniqueId(),
-            completed: false
-        }
+        // const newTask = {
+        //     task: taskInput,
+        //     id: getUniqueId(),
+        //     completed: false
+        // }
         
-        props.addNewTask(newTask)
+        props.addNewTask(taskInput)
         setTaskInput('')
     }
 

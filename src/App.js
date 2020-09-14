@@ -1,16 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
 import Title from './components/Title'
 import Header from './components/Header'
 import CompletedCount from './components/CompletedCount';
+import {getUniqueId} from './hooks/getUniqueId'
 
 function App() {
   const [tasks, setTasks] = useState([])
 
-  const addNewTask = (newTask) => {
+  const addNewTask = (taskInput) => {
+
+ const newTask = {
+            task: taskInput,
+            id: getUniqueId(tasks),
+            completed: false
+        }
+
     setTasks([...tasks, newTask])
+    
   }
+
+  useEffect(() => {
+    if(localStorage.getItem('tasks') !== null){
+      setTasks(JSON.parse(localStorage.getItem('tasks')))
+        }
+  },[])
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  }, [tasks])
+
 
   const toggleCompleted = (clickedTask) => {
     console.log('toggled here')
